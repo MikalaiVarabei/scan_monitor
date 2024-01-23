@@ -208,8 +208,8 @@ namespace scm
 
                 int err = rm.DataReseived(rxData, rxDataSize);
 
-                logInfo(rxData, rxDataSize);
-                serialText("error: " + err + "\r\n");
+                LogInfo(rxData, rxDataSize);
+                SerialText("error: " + err + "\r\n");
                 rxDataNotEmpty = false;
             }
             //
@@ -217,21 +217,21 @@ namespace scm
 
 
         //*********** Вывод данных **************************************
-        public void serialText(string txt)//all text
+        public void SerialText(string txt)//all text
         {
             if (txt == "Scroll") outTextBox.ScrollToCaret();
             else outTextBox.AppendText(txt);
         }
 
-        public void logInfo(byte[] buf, int size)
+        public void LogInfo(byte[] buf, int size)
         {
             for (int i = 0; i < size; i++)
             {
-                serialText(buf[i].ToString("X2"));
-                serialText(" ");
+                SerialText(buf[i].ToString("X2"));
+                SerialText(" ");
             }
-            serialText("\r\n");
-            serialText("Scroll");
+            SerialText("\r\n");
+            SerialText("Scroll");
         }
 
 
@@ -281,7 +281,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void GetSystemInfoButton_Click(object sender, EventArgs e)
@@ -291,7 +291,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void MaskParametersReadButton_Click(object sender, EventArgs e)
@@ -303,7 +303,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void SaveTimeButton_Click(object sender, EventArgs e)
@@ -316,7 +316,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void ReadTimeButton_Click(object sender, EventArgs e)
@@ -326,7 +326,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void GetAutostartInfoButton_Click(object sender, EventArgs e)
@@ -336,7 +336,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void OpenDoorButton_Click(object sender, EventArgs e)
@@ -346,7 +346,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void CloseDoorButton_Click(object sender, EventArgs e)
@@ -356,7 +356,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void OpenTrunkButton_Click(object sender, EventArgs e)
@@ -366,7 +366,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void BlockEngineButton_Click(object sender, EventArgs e)
@@ -376,7 +376,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void UnblockingEngineButton_Click(object sender, EventArgs e)
@@ -386,7 +386,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void StartEngineButtonButton_Click(object sender, EventArgs e)
@@ -395,7 +395,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void StartEngineTimeButton_Click(object sender, EventArgs e)
@@ -405,7 +405,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void OnIgnitionButton_Click(object sender, EventArgs e)
@@ -415,7 +415,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void OffIgnitionButton_Click(object sender, EventArgs e)
@@ -424,7 +424,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void SaveWayButton_Click(object sender, EventArgs e)
@@ -437,7 +437,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void ReadWayButton_Click(object sender, EventArgs e)
@@ -446,7 +446,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
 
             numericUpDownWay.Text = "0";
         }
@@ -463,7 +463,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
         }
 
         private void ReadSettingsButton_Click(object sender, EventArgs e)
@@ -472,7 +472,7 @@ namespace scm
             preambleSend();
             comport.Send(buf, size);
 
-            logInfo(buf, size);
+            LogInfo(buf, size);
 
             numericUpDownByte0.Text = "0";
             numericUpDownByte1.Text = "0";
